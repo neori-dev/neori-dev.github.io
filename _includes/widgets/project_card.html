@@ -1,0 +1,27 @@
+<div class="my-3 p-0 bg-white shadow-sm rounded-xl">
+    <h6 class="border-bottom border-gray p-3 mb-0">
+        <i class="fas fa-code-branch"></i> Projects
+    </h6>
+    <div class="p-3">
+        {% for project in site.data.projects %}
+        <div class="{% unless forloop.last %}border-bottom border-gray pb-3 mb-3{% endunless %}">
+            <h5 class="mt-0 mb-2">{{ project.title }}</h5>
+            <p class="mt-0 mb-2 text-muted small">{{ project.description }}</p>
+            {% if project.technologies %}
+            <p class="mb-2">
+                {% for technology in project.technologies %}
+                <span class="badge badge-light border mr-1">{{ technology }}</span>
+                {% endfor %}
+            </p>
+            {% endif %}
+            {% if project.links %}
+            <p class="small mb-0">
+                {% for link in project.links %}
+                <a class="mr-3" target="_blank" rel="noopener" href="{{ link.url }}">{{ link.name }} <i class="fas fa-external-link-alt"></i></a>
+                {% endfor %}
+            </p>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</div>

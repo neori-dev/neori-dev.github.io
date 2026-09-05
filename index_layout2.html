@@ -1,7 +1,7 @@
 ---
 layout: default
 title : Homepage
-navbar_title: Home (Layout 2)
+navbar_title: Home
 ---
 {% include widgets/profile_card.html %}
 
@@ -9,18 +9,11 @@ navbar_title: Home (Layout 2)
     {% include widgets/experience_card.html %}
 {% endif %}
 
-{% if site.data.display.homepage.show_news %}
-    {% assign count_news = site.news | size %}
-    {% if count_news > 0 %}
-        {% include widgets/news_card.html limit=site.data.display.homepage.num_news %}
-    {% endif %}
+{% if site.data.display.homepage.show_blog %}
+    {% assign posts = site.posts | sort: "date" | reverse %}
+    {% include widgets/blog_card_home.html posts=posts limit=site.data.display.homepage.num_blog %}
 {% endif %}
 
-{% if site.data.display.homepage.show_selected_publications %}
-    {% assign pubs = site.publications | sort: "date" | reverse | where: "selected", true %}
-    {% 
-        include widgets/publication_card.html 
-        publications=pubs
-        title='<i class="fas fa-star"></i> Selected Publications'
-    %}
+{% if site.data.display.homepage.show_projects %}
+    {% include widgets/project_card.html %}
 {% endif %}

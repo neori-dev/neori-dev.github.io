@@ -1,0 +1,19 @@
+- title: "Project Name"
+  description: "Briefly describe the problem this project solves, your contribution, and its outcome."
+  technologies:
+    - "Technology"
+    - "Tools"
+  links:
+    - name: "Code"
+      url: "https://github.com/your-name/your-project"
+    - name: "Demo"
+      url: "https://example.com"
+
+- title: "Another Project"
+  description: "Showcase a course project, open-source contribution, research prototype, or personal tool."
+  technologies:
+    - "Python"
+    - "Machine learning"
+  links:
+    - name: "Code"
+      url: "https://github.com/your-name/another-project"
